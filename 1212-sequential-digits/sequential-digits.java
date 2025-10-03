@@ -1,0 +1,20 @@
+class Solution {
+    public List<Integer> sequentialDigits(int low, int high) {
+        List<Integer> result = new ArrayList<>();
+        String digit = "123456789";
+
+        int lowLength = String.valueOf(low).length();
+        int highLength = String.valueOf(high).length();
+
+        for(int length = lowLength; length <= highLength; length++){
+            for(int i = 0; i <= 9-length;i++){
+                String subStr = digit.substring(i,i+length);
+                int num = Integer.parseInt(subStr);
+                if(num >= low && num <= high){
+                    result.add(num);
+                }
+            }
+        }
+        return result;
+    }
+}
