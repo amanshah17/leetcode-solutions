@@ -3,6 +3,16 @@ class Solution {
         if(n == 0 || n == 1){
             return n;
         }
-        return fib(n-2)+fib(n-1);
+         int a = 0;
+        int b = 1;
+        int sum = 0;
+        int i = 2;
+        while(i <= n){
+           sum = a+b;
+           a = b;
+           b = sum;
+           i++;
+        }
+        return b;
     }
 }
