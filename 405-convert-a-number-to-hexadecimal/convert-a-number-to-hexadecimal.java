@@ -1,21 +1,14 @@
 class Solution {
     public String toHex(int num) {
-        String hex = "";
-        if(num == 0){
-            return "0";
+      if (num == 0) return "0";
+        StringBuilder sb = new StringBuilder();
+        char[] map = {'0', '1', '2', '3', '4', '5', '6', '7',
+                      '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
+        while (num != 0 && sb.length() < 8) {
+            int rem = num & 15; 
+            sb.insert(0, map[rem]);
+            num >>>= 4;  
         }
-        if(num < 0){
-            return Integer.toHexString(num).toLowerCase();
-        }
-        while(num > 0){
-            int rem = num % 16;
-            if(rem < 10){
-                hex = rem + hex;
-            }else{
-                hex = (char)(rem+87)+hex;
-            }
-            num /= 16;
-        }
-        return hex;
+        return sb.toString();
     }
 }
