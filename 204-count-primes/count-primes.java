@@ -3,9 +3,7 @@ public class Solution {
         if (n <= 2) return 0;
 
         boolean[] isPrime = new boolean[n];
-       for(int i = 0; i < n; i++){
-        isPrime[i] = true;
-       }
+        Arrays.fill(isPrime, true);
 
         isPrime[0] = false;
         isPrime[1] = false;
