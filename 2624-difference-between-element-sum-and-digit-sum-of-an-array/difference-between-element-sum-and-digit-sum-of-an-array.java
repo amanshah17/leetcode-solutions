@@ -8,6 +8,6 @@ class Solution {
             arr/=10;
             }
         }
-        return Math.abs(sum-digitSum);
+        return sum-digitSum;
     }
 }
