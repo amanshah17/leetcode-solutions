@@ -7,8 +7,7 @@ class Solution {
             }
         }
         while(zeroIndex < nums.length ){
-            nums[zeroIndex] = 0;
-            zeroIndex++;
+            nums[zeroIndex++] = 0;
         }
     }
 }
